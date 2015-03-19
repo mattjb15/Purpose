@@ -1,0 +1,85 @@
+        <!-- Page Title -->
+        <div class="section section-breadcrumbs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Responses</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 faq-wrapper">
+                        <div class="panel-group" id="accordion2">
+                            <div class="panel panel-default">
+                                <a class="accordion-toggle" onclick="responsiveVoice.speak($('.valueHolder').text(),'UK English Male');">
+                                    <div class="panel-heading">
+                                        <h1 class="valueHolder">Yes</h1>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="panel panel-default">
+                                <a class="accordion-toggle" onclick="responsiveVoice.speak($('.valueHolder').text(),'UK English Male');">
+                                    <div class="panel-heading">
+                                        <h1 class="valueHolder">No</h1>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="panel panel-default">
+                                <a class="accordion-toggle" onclick="document.getElementById('male_maybe').play()">
+                                    <div class="panel-heading">
+                                        <audio id="male_maybe">
+                                            <source src="sounds/male/maybe.mp3" type="audio/mp3">
+                                        </audio>
+                                        <h1>Maybe</h1>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="panel panel-default">
+                                <a class="accordion-toggle" onclick="document.getElementById('male_i_dont_know').play()">
+                                    <div class="panel-heading">
+                                        <audio id="male_i_dont_know">
+                                            <source src="sounds/male/i_dont_know.mp3" type="audio/mp3">
+                                        </audio>
+                                        <h1>I don't know</h1>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="panel panel-default">
+                                <a class="accordion-toggle" onclick="document.getElementById('male_i_dont_want_to_answer').play()">
+                                    <div class="panel-heading">
+                                        <audio id="male_i_dont_want_to_answer">
+                                            <source src="sounds/male/i_dont_want_to_answer.mp3" type="audio/mp3">
+                                        </audio>
+                                        <h1>I don't want to answer</h1>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="panel panel-default">
+                                <a class="accordion-toggle" onclick="document.getElementById('male_i_dont_mind').play()">
+                                    <div class="panel-heading">
+                                        <audio id="male_i_dont_mind">
+                                            <source src="sounds/male/i_dont_mind.mp3" type="audio/mp3">
+                                        </audio>
+                                        <h1>I don't mind</h1>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="panel panel-default">
+                                <a class="accordion-toggle" onclick="document.getElementById('male_can_you_repeat_question').play()">
+                                    <div class="panel-heading">
+                                        <audio id="male_can_you_repeat_question">
+                                            <source src="sounds/male/can_you_repeat_question.mp3" type="audio/mp3">
+                                        </audio>
+                                        <h1>Can you repeat the question</h1>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
