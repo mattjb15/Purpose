@@ -1,0 +1,92 @@
+<!-- Page Title -->
+<div class="section section-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="cat-heading">Emotions</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 faq-wrapper">
+                <div class="panel-group" id="accordion2">
+                    <div class="panel panel-default">
+                        <a class="accordion-toggle">
+                            <div class="panel-heading cat-heading">
+                                <h1>I'm Happy</h1>
+                            </div>
+                            <div class="cat-img">
+                                <img src="img/happy.png">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="panel-group" id="accordion2">
+                        <div class="panel panel-default">
+                            <a class="accordion-toggle">
+                                <div class="panel-heading cat-heading">
+                                    <h1>I'm Sad</h1>
+                                </div>
+                                <div class="cat-img">
+                                    <img src="img/sad.png">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="panel panel-default">
+                            <a class="accordion-toggle">
+                                <div class="panel-heading cat-heading">
+                                    <h1>I'm worried</h1>
+                                </div>
+                                <div class="cat-img">
+                                    <img src="img/worried.png">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="panel panel-default">
+                            <a class="accordion-toggle">
+                                <div class="panel-heading cat-heading">
+                                    <h1>I'm angry</h1>
+                                </div>
+                                <div class="cat-img">
+                                    <img src="img/angry.png">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="panel panel-default">
+                            <a class="accordion-toggle">
+                                <div class="panel-heading cat-heading">
+                                    <h1>I'm afraid</h1>
+                                </div>
+                                <div class="cat-img">
+                                    <img src="img/afraid.png">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="panel panel-default">
+                            <a class="accordion-toggle">
+                                <div class="panel-heading cat-heading">
+                                    <h1>I'm Confused</h1>
+                                </div>
+                                <div class="cat-img">
+                                    <img src="img/confused.png">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var voice = 'UK English Male'
+        $('.accordion-toggle').click(function(event)
+        {
+            var speech = $(this).text().replace(/\s+/g, '');
+            responsiveVoice.speak(speech, voice);
+        });
+
+    </script>

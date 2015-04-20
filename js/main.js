@@ -21,10 +21,10 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/settings", {templateUrl: "partials/settings.html", controller: "PageCtrl"})
     .when("/responses", {templateUrl: "partials/responses.html", controller: "PageCtrl"})
     .when("/food", {templateUrl: "partials/food.html", controller: "PageCtrl"})
-    .when("/activities", {templateUrl: "partials/activities.html", controller: "PageCtrl"})
     .when("/medical", {templateUrl: "partials/medical.html", controller: "PageCtrl"})
-    .when("/conversation", {templateUrl: "partials/conversation.html", controller: "PageCtrl"})
-    .when("/custom", {templateUrl: "partials/custom.html", controller: "PageCtrl"})
+    .when("/emotions", {templateUrl: "partials/emotions.html", controller: "PageCtrl"})
+    .when("/hygiene", {templateUrl: "partials/hygiene.html", controller: "PageCtrl"})
+    .when("/activities", {templateUrl: "partials/activities.html", controller: "PageCtrl"})
     .otherwise("/404", {templateUrl: "partials/404.html", controller: "PageCtrl"});
 }]);
 

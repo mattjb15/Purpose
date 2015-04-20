@@ -1,95 +1,18 @@
-        <!-- Page Title -->
-        <div class="section section-breadcrumbs">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1>Settings</h1>
-                    </div>
-                </div>
-            </div>
+<form>
+    <br> <br>
+    <div class="col-md-12">
+        <div class="form-group">
+            <label><h1> Voice </h1> </label>
+            <select class="form-control" id="voice" onchange='getSelectedValue();'>
+                <option value="UK English Male">Male</option>
+                <option value="UK English Female">Female</option>
+            </select>
         </div>
-        
-        <div class="section">
-            <div class="container">
-                <div class="row">
+    </div>
+</form>
 
-                    <!-- Team Member -->
-                    <div class="col-md-4 col-sm-6">
-                        <div class="team-member">
-                            <!-- Team Member Photo -->
-                            <div class="team-member-image"><img src="img/team1.jpg" alt="Name Surname"></div>
-                            <div class="team-member-info">
-                                <ul>
-                                    <!-- Team Member Info & Social Links -->
-                                    <li class="team-member-name">
-                                        Food and Drink
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Team Member -->
-
-                    <div class="col-md-4 col-sm-6">
-                        <div class="team-member">
-                            <div class="team-member-image"><img src="img/team2.jpg" alt="Name Surname"></div>
-                            <div class="team-member-info">
-                                <ul>
-                                    <li class="team-member-name">
-                                        Name Surname
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="team-member">
-                            <div class="team-member-image"><img src="img/team3.jpg" alt="Name Surname"></div>
-                            <div class="team-member-info">
-                                <ul>
-                                    <li class="team-member-name">
-                                        Name Surname
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="team-member">
-                            <div class="team-member-image"><img src="img/team4.jpg" alt="Name Surname"></div>
-                            <div class="team-member-info">
-                                <ul>
-                                    <li class="team-member-name">
-                                        Name Surname
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="team-member">
-                            <div class="team-member-image"><img src="img/team5.jpg" alt="Name Surname"></div>
-                            <div class="team-member-info">
-                                <ul>
-                                    <li class="team-member-name">
-                                        Name Surname
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="team-member">
-                            <div class="team-member-image"><img src="img/team6.jpg" alt="Name Surname"></div>
-                            <div class="team-member-info">
-                                <ul>
-                                    <li class="team-member-name">
-                                        Name Surname
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<script>
+    function getSelectedValue() {
+    var voice = document.getElementById('voice').value;
+    }
+</script>

@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Medical</h1>
+                <div class="cat-heading">Medical</div>
             </div>
         </div>
     </div>
@@ -16,65 +16,57 @@
                 <div class="panel-group" id="accordion2">
                     <div class="panel panel-default">
                         <a class="accordion-toggle">
-                            <div class="panel-heading">
-                                <h1>empty</h1>
+                            <div class="panel-heading cat-heading">
+                                <h1>I feel unwell</h1>
+                            </div>
+                            <div class="cat-img">
+                                <img src="img/unwell.png">
                             </div>
                         </a>
                     </div>
                     <div class="panel panel-default">
                         <a class="accordion-toggle">
-                            <div class="panel-heading">
-                                <h1>empty</h1>
+                            <div class="panel-heading cat-heading">
+                                <h1>I feel sick</h1>
+                            </div>
+                            <div class="cat-img">
+                                <img src="img/sick.png">
                             </div>
                         </a>
                     </div>
-                    <div class="panel panel-default">
-                        <a class="accordion-toggle">
-                            <div class="panel-heading">
-                                <h1>empty</h1>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="panel panel-default">
-                        <a class="accordion-toggle">
-                            <div class="panel-heading">
-                                <h1>empty</h1>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="panel panel-default">
-                        <a class="accordion-toggle">
-                            <div class="panel-heading">
-                                <h1>empty</h1>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="panel panel-default">
-                        <a class="accordion-toggle">
-                            <div class="panel-heading">
-                                <h1>empty</h1>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="panel panel-default">
-                        <a class="accordion-toggle">
-                            <div class="panel-heading">
-                                <h1>empty</h1>
-                            </div>
-                        </a>
+                    <div class="panel-group" id="accordion2">
+                        <div class="panel panel-default">
+                            <a class="accordion-toggle">
+                                <div class="panel-heading cat-heading">
+                                    <h1>I want to see a doctor</h1>
+                                </div>
+                                <div class="cat-img">
+                                    <img src="img/doctor.png">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="panel panel-default">
+                            <a class="accordion-toggle">
+                                <div class="panel-heading cat-heading">
+                                    <h1>I'm in pain</h1>
+                                </div>
+                                <div class="cat-img">
+                                    <img src="img/pain.png">
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<script type="text/javascript">
+    <script type="text/javascript">
 
-    $('.accordion-toggle').click(function(event)
-    {
-        var speech = $(this).text().replace(/\s+/g, '');
-        responsiveVoice.speak(speech,'UK English Male');
-    });
-         
-</script>
+        $('.accordion-toggle').click(function(event)
+        {
+            var speech = $(this).text().replace(/\s+/g, '');
+            responsiveVoice.speak(speech,'UK English Male');
+        });
+
+    </script>
