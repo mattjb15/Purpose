@@ -35,9 +35,9 @@
 
         var speak = function(element)
         {
-            
+            var voice = getCookie('voice')
             var speech = element.text.replace(/\s+/g, '');
-            responsiveVoice.speak(speech,'UK English Male');
+            responsiveVoice.speak(speech,voice);
         }
 
     </script>
