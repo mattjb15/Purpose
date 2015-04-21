@@ -37,18 +37,18 @@
                             <label><h1> Custom messages </h1> </label>
                             <p>Add a new messages:<br>
                             <form ng-submit="addItem()">
-                                <input type="text" ng-model="itemname" size="30" placeholder="item name">
-                                <button class="btn-primary" type="submit"><i class="icon-plus icon-white"></i></button>
+                                <input type="text" ng-model="itemname" size="30" placeholder="message name">
+                                <button class="btn-primary" type="submit">Add</button>
                             </form>
                             </p>
                             <p>Messages in your custom category:</p>
                             <p> <input type="text" ng-model="search" class="search-query" placeholder="Search"> </p>
                             <table ng-repeat="item in items | filter:search | orderBy:'text'">
-                                <tr>
-                                    <td width="100px">{{item.text}}</td>
-                                    <td>
-                                        <a class="btn btn-mini btn-danger" ng-click="deleteItem(item.id)"><i class="icon-remove icon-white"></i></a>
+                                <tr height="40px">
+                                    <td width="50px">
+                                        <a class="btn btn-red" ng-click="deleteItem(item.id)">X</a>
                                     </td> 
+                                    <td>{{item.text}}</td>
                                 </tr> 
                             </table>
                         </div>
