@@ -16,15 +16,16 @@ var app = angular.module('Purpose', [
 app.config(['$routeProvider', function ($routeProvider) {
   $routeProvider
     // Home
-    .when("/", {templateUrl: "partials/home.html", controller: "PageCtrl"})
+    .when("/", {templateUrl: "partials/home.html", controller: "MainCtrl"})
     // Pages
-    .when("/settings", {templateUrl: "partials/settings.html", controller: "PageCtrl"})
+    .when("/settings", {templateUrl: "partials/settings.html", controller: "MainCtrl"})
     .when("/responses", {templateUrl: "partials/responses.html", controller: "PageCtrl"})
     .when("/food", {templateUrl: "partials/food.html", controller: "PageCtrl"})
     .when("/medical", {templateUrl: "partials/medical.html", controller: "PageCtrl"})
     .when("/emotions", {templateUrl: "partials/emotions.html", controller: "PageCtrl"})
     .when("/hygiene", {templateUrl: "partials/hygiene.html", controller: "PageCtrl"})
     .when("/activities", {templateUrl: "partials/activities.html", controller: "PageCtrl"})
+    .when("/custom", {templateUrl: "partials/custom.html", controller: "MainCtrl"})
     .otherwise("/404", {templateUrl: "partials/404.html", controller: "PageCtrl"});
 }]);
 
@@ -51,7 +52,9 @@ app.controller('PageCtrl', function (/* $scope, $location, $http */)
   // Activates Tooltips for Social Links
   $('.tooltip-social').tooltip({
     selector: "a[data-toggle=tooltip]"
-  })
+  });
+
+
 });
 
 
@@ -61,14 +64,41 @@ app.controller('PageCtrl', function (/* $scope, $location, $http */)
 app.controller('MainCtrl', function ($scope) 
 {
     $scope.items = '';
- 
+
     var initCallback = function()
     {
-        getItems();
+      getItems();
     };
  
-    var dataStore = new IDBStore('todos', initCallback);
- 
+    var messages = new IDBStore(
+    {
+      storeName: 'messages', 
+      keyPath: 'id',
+      autoIncrement: true,
+      onStoreReady: function(){
+        console.log('Store ready!');
+        initCallback();
+/*
+        categories.clear();
+        categories.batch(
+          [
+            { type: "put", value: {text: 'Responses'} },
+            { type: "put", value: {text: 'Food and Drink'} },
+            { type: "put", value: {text: 'Medical'} },
+            { type: "put", value: {text: 'Emotions'} },
+            { type: "put", value: {text: 'Hygiene'} },
+            { type: "put", value: {text: 'Activities'} }
+          ],
+          getItems,
+          errorCallback); */
+      }
+    });
+
+    var getInitialCategories = function(data)
+    {
+      //messages.put({'text' : 'responses'},getItems,errorCallback); 
+    };
+
     var getItemsSuccess = function(data)
     {
         $scope.items = data;
@@ -82,18 +112,20 @@ app.controller('MainCtrl', function ($scope)
  
     var getItems = function()
     {
-      dataStore.getAll(getItemsSuccess,errorCallback);
+      messages.getAll(getItemsSuccess,errorCallback);
       console.log('getItems'); 
     };
  
     $scope.deleteItem = function(item)
     {
-      dataStore.remove(item,getItems,errorCallback);
+      messages.remove(item,getItems,errorCallback);
     }
  
     $scope.addItem = function()
     {
-      dataStore.put({'timeStamp': new Date().getTime(), 'text' : $scope.itemname},getItems,errorCallback); 
+      messages.put({'text' : $scope.itemname},getItems,errorCallback); 
       $scope.itemname = ''; 
     };
+
+
 });

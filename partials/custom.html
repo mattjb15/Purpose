@@ -1,0 +1,43 @@
+<!-- Page Title -->
+<div class="section section-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="cat-heading" style="padding: 20px;">Custom</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 faq-wrapper">
+                <div class="panel-group" id="accordion2">
+                    <div class="panel panel-default" ng-repeat="item in items | filter:search | orderBy:'text'">
+                        <a class="accordion-toggle" onclick='speak(this)'>
+                            <div class="panel-heading cat-heading">
+                                <h1>{{item.text}}</h1>
+                            </div>
+                            <div class="cat-img">
+                                <img src="img/settings.png">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <script type="text/javascript">
+
+        var speak = function(element)
+        {
+            
+            var speech = element.text.replace(/\s+/g, '');
+            responsiveVoice.speak(speech,'UK English Male');
+        }
+
+    </script>
