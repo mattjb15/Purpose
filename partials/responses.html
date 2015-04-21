@@ -61,10 +61,11 @@
 
 <script type="text/javascript">
 
+    var voice = getCookie('voice')
     $('.accordion-toggle').click(function(event)
     {
         var speech = $(this).text().replace(/\s+/g, '');
-        responsiveVoice.speak(speech,'UK English Male');
+        responsiveVoice.speak(speech, voice);
     });
          
 </script>

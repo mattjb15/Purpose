@@ -17,7 +17,7 @@
                     <div class="panel panel-default">
                         <a class="accordion-toggle">
                             <div class="panel-heading cat-heading">
-                                <h1>I'm Happy</h1>
+                                <h1>I'm <b>Happy</b></h1>
                             </div>
                             <div class="cat-img">
                                 <img src="img/happy.png">
@@ -82,7 +82,7 @@
     </div>
 
     <script type="text/javascript">
-        var voice = 'UK English Male'
+        var voice = getCookie('voice')
         $('.accordion-toggle').click(function(event)
         {
             var speech = $(this).text().replace(/\s+/g, '');

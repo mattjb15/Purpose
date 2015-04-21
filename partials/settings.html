@@ -14,8 +14,11 @@
 <script>
     function getSelectedValue() {
     var voice = document.getElementById('voice').value;
+    document.cookie="voice=" + voice;
     }
 </script>
+
+
 
 <div class="col-md-12">
     <div class="form-group">
