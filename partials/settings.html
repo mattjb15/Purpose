@@ -1,15 +1,63 @@
-<form>
-    <br> <br>
-    <div class="col-md-12">
-        <div class="form-group">
-            <label><h1> Voice </h1> </label>
-            <select class="form-control" id="voice" onchange='getSelectedValue();'>
-                <option value="UK English Male">Male</option>
-                <option value="UK English Female">Female</option>
-            </select>
+<div class="section section-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="cat-heading" style="padding: 20px;">Settings</div>
+            </div>
         </div>
     </div>
-</form>
+</div>
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 faq-wrapper">
+                <div class="panel-group" id="accordion2">
+                    <form>
+                        <div class="form-group">
+                            <label><h1> Voice </h1> </label>
+                            <select class="form-control" id="voice" onchange='getSelectedValue();'>
+                                <option value="UK English Male">Male</option>
+                                <option value="UK English Female">Female</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 faq-wrapper">
+                <div class="panel-group" id="accordion2">
+                        <div class="form-group">
+                            <label><h1> Custom messages </h1> </label>
+                            <p>Add a new messages:<br>
+                            <form ng-submit="addItem()">
+                                <input type="text" ng-model="itemname" size="30" placeholder="item name">
+                                <button class="btn-primary" type="submit"><i class="icon-plus icon-white"></i></button>
+                            </form>
+                            </p>
+                            <p>Messages in your custom category:</p>
+                            <p> <input type="text" ng-model="search" class="search-query" placeholder="Search"> </p>
+                            <table ng-repeat="item in items | filter:search | orderBy:'text'">
+                                <tr>
+                                    <td width="100px">{{item.text}}</td>
+                                    <td>
+                                        <a class="btn btn-mini btn-danger" ng-click="deleteItem(item.id)"><i class="icon-remove icon-white"></i></a>
+                                    </td> 
+                                </tr> 
+                            </table>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <script>
     function getSelectedValue() {
@@ -41,3 +89,4 @@
     </table>
     </div>
 </div>
+</script>
