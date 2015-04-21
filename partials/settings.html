@@ -63,8 +63,49 @@
 
 
 <script>
+    var list = document.getElementById('voice');
+    var i = 0;
+    while(i < 2){
+        if (list.options[i].value == getCookie('voice')) {
+            list.options[i].selected = true;
+        }
+        i++;
+        }
+
+
+
     function getSelectedValue() {
     var voice = document.getElementById('voice').value;
     document.cookie="voice=" + voice;
     }
+
+</script>
+
+
+
+
+
+<div class="col-md-12">
+    <div class="form-group">
+    <p>This sample list uses the following IndexedDB library:<br>
+    <a href="https://github.com/jensarps/IDBWrapper">https://github.com/jensarps/IDBWrapper</a></p>
+    <p>Add a new item:<br>
+    <form ng-submit="addItem()">
+        <input type="text" ng-model="itemname" size="30" placeholder="item name">
+        <button class="btn-primary" type="submit"><i class="icon-plus icon-white"></i></button>
+    </form>
+    </p>
+    <p>Items in your list:</p>
+    <p> <input type="text" ng-model="search" class="search-query" placeholder="Search"> </p>
+    <table ng-repeat="item in items | filter:search | orderBy:'text'">
+        <tr>
+            <td width="100px">{{item.text}}</td>
+            <td width="150px">{{item.timeStamp}}</td>
+            <td>
+                <a class="btn btn-mini btn-danger" ng-click="deleteItem(item.id)"><i class="icon-remove icon-white"></i></a>
+            </td> 
+        </tr> 
+    </table>
+    </div>
+</div>
 </script>
