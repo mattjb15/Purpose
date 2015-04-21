@@ -39,8 +39,8 @@
 <![endif]-->
 
 <!-- Our Website Content Goes Here -->
-<div ng-include='"templates/header.html"'></div>
-<div ng-view></div>
+<div ng-include='"templates/header.html"' class="navbar-fixed-top"></div>
+<div ng-view style="padding-top: 140px;"></div>
 <div ng-include='"templates/footer.html"'></div>
 
 <!-- Vendor: Javascripts -->
@@ -54,6 +54,8 @@
 
 <!-- Our Website Javascripts -->
 <script src="js/main.js"></script>
+
+<script src="js/IDBWrapper/idbstore.min.js"></script>
 
 </body>
 </html>

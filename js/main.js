@@ -31,14 +31,16 @@ app.config(['$routeProvider', function ($routeProvider) {
 /**
  * Controls the Blog
  */
-app.controller('BlogCtrl', function (/* $scope, $location, $http */) {
+app.controller('BlogCtrl', function (/* $scope, $location, $http */) 
+{
   console.log("Blog Controller reporting for duty.");
 });
 
 /**
  * Controls all other Pages
  */
-app.controller('PageCtrl', function (/* $scope, $location, $http */) {
+app.controller('PageCtrl', function (/* $scope, $location, $http */)
+{
   console.log("Page Controller reporting for duty.");
 
   // Activates the Carousel
@@ -50,4 +52,48 @@ app.controller('PageCtrl', function (/* $scope, $location, $http */) {
   $('.tooltip-social').tooltip({
     selector: "a[data-toggle=tooltip]"
   })
+});
+
+
+/**
+ * Controls the db
+ */
+app.controller('MainCtrl', function ($scope) 
+{
+    $scope.items = '';
+ 
+    var initCallback = function()
+    {
+        getItems();
+    };
+ 
+    var dataStore = new IDBStore('todos', initCallback);
+ 
+    var getItemsSuccess = function(data)
+    {
+        $scope.items = data;
+        $scope.$apply(); 
+    };
+ 
+    var errorCallback = function()
+    {
+        console.log('error'); 
+    };
+ 
+    var getItems = function()
+    {
+      dataStore.getAll(getItemsSuccess,errorCallback);
+      console.log('getItems'); 
+    };
+ 
+    $scope.deleteItem = function(item)
+    {
+      dataStore.remove(item,getItems,errorCallback);
+    }
+ 
+    $scope.addItem = function()
+    {
+      dataStore.put({'timeStamp': new Date().getTime(), 'text' : $scope.itemname},getItems,errorCallback); 
+      $scope.itemname = ''; 
+    };
 });
