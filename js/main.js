@@ -6,7 +6,7 @@
 /**
  * Main AngularJS Web Application
  */
-var app = angular.module('Purpose', [
+var app = angular.module('Apphasia', [
   'ngRoute'
 ]);
 
