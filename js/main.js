@@ -57,13 +57,14 @@ app.controller('PageCtrl', function (/* $scope, $location, $http */)
 
 });
 
-
 /**
  * Controls the db
  */
 app.controller('MainCtrl', function ($scope) 
 {
+
     $scope.items = '';
+    $scope.param = {};
 
     var initCallback = function()
     {
@@ -102,7 +103,19 @@ app.controller('MainCtrl', function ($scope)
     var getItemsSuccess = function(data)
     {
         $scope.items = data;
-        $scope.$apply(); 
+
+        $scope.items.forEach(function(entry) {
+            console.log(entry.image);
+            var arrayBufferView = new Uint8Array(entry.image);
+            var blob = new Blob([arrayBufferView], {type: "image/jpeg"});
+            console.log("Image: ", blob);
+            var urlCreator = window.URL || window.webkitURL;
+            var imageUrl = urlCreator.createObjectURL(blob);
+            console.log(imageUrl);
+            entry.image = imageUrl;
+        })
+
+        $scope.$apply();
     };
  
     var errorCallback = function()
@@ -123,8 +136,30 @@ app.controller('MainCtrl', function ($scope)
  
     $scope.addItem = function()
     {
-      messages.put({'text' : $scope.itemname},getItems,errorCallback); 
-      $scope.itemname = ''; 
+        console.log("addItem called, arguments: ", $scope.itemname, $scope.file)
+        messages.put({'text' : $scope.itemname, 'image' : $scope.file},getItems,errorCallback);
+        $scope.itemname = '';
+        $scope.file = null;
+    };
+
+    $scope.setFile = function(element) {
+        var reader = new FileReader();
+        reader.onload = function(event) {
+            var contents = event.target.result;
+            console.log("File contents: " + contents);
+            console.log("File: ", reader.result);
+
+            $scope.file = reader.result;
+            $scope.$apply();
+        };
+
+        reader.onerror = function(event) {
+            console.error("File could not be read! Code " + event.target.error.code);
+        };
+
+        reader.readAsArrayBuffer(element.files[0]);
+
+
     };
 });
 
@@ -138,6 +173,3 @@ function getCookie(cname) {
     }
     return "";
 }
-
-
-

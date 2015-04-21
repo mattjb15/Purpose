@@ -36,8 +36,11 @@
                         <div class="form-group">
                             <label><h1> Custom messages </h1> </label>
                             <p>Add a new messages:<br>
-                            <form ng-submit="addItem()">
-                                <input type="text" ng-model="itemname" size="30" placeholder="message name">
+                            <form ng-submit="addItem()" ng-controller="MainCtrl">
+                                <input type="text" ng-model="itemname" size="30" placeholder="message name"/><br/>
+                                <br/>
+                                <input type="file" accept="image/*" onchange="angular.element(this).scope().setFile(this)">
+                                <br/>
                                 <button class="btn-primary" type="submit">Add</button>
                             </form>
                             </p>
