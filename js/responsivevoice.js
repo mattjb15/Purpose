@@ -320,7 +320,7 @@ var ResponsiveVoice = function(){
 				
 			}else{
 
-				var url = 'http://www.corsproxy.com/translate.google.com/translate_tts?ie=UTF-8&q=' + multipartText[i] + '&tl=' + profile.collectionvoice.lang || profile.systemvoice.lang || 'en-US';
+				var url = 'http://translate.google.com/translate_tts?ie=UTF-8&q=' + multipartText[i] + '&tl=' + profile.collectionvoice.lang || profile.systemvoice.lang || 'en-US';
 				
 				var audio = new Audio(url);
 				audio.playbackRate = 1;
