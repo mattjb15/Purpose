@@ -17,7 +17,7 @@
                     <div class="panel panel-default">
                         <a class="accordion-toggle">
                             <div class="panel-heading cat-heading">
-                                <h1>I'm <b>Happy</b></h1>
+                                <h1>I am happy</h1>
                             </div>
                             <div class="cat-img">
                                 <img src="img/happy.png">
@@ -28,7 +28,7 @@
                         <div class="panel panel-default">
                             <a class="accordion-toggle">
                                 <div class="panel-heading cat-heading">
-                                    <h1>I'm Sad</h1>
+                                    <h1>I am sad</h1>
                                 </div>
                                 <div class="cat-img">
                                     <img src="img/sad.png">
@@ -38,7 +38,7 @@
                         <div class="panel panel-default">
                             <a class="accordion-toggle">
                                 <div class="panel-heading cat-heading">
-                                    <h1>I'm worried</h1>
+                                    <h1>I am worried</h1>
                                 </div>
                                 <div class="cat-img">
                                     <img src="img/worried.png">
@@ -68,7 +68,7 @@
                         <div class="panel panel-default">
                             <a class="accordion-toggle">
                                 <div class="panel-heading cat-heading">
-                                    <h1>I'm Confused</h1>
+                                    <h1>I am Confused</h1>
                                 </div>
                                 <div class="cat-img">
                                     <img src="img/confused.png">
@@ -86,6 +86,7 @@
         $('.accordion-toggle').click(function(event)
         {
             var speech = $(this).text().replace(/\s+/g, '');
+            speech = speech.replace(/sad/g,"sadd");
             responsiveVoice.speak(speech, voice);
         });
 

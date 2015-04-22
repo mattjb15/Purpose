@@ -67,6 +67,8 @@
         $('.accordion-toggle').click(function(event)
         {
             var speech = $(this).text().replace(/\s+/g, '');
+            speech = speech.replace(/I/g, "eye");
+            speech = speech.replace(/to\s*see\s*a/g,"2 sea ay");
             responsiveVoice.speak(speech, voice);
         });
 

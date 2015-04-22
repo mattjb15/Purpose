@@ -57,6 +57,9 @@
         $('.accordion-toggle').click(function(event)
         {
             var speech = $(this).text().replace(/\s+/g, '');
+            speech = speech.replace(/I/g,"eye");
+            speech = speech.replace(/some/g, "summ");
+            speech = speech.replace(/to\s*go/g, "2 gow");
             responsiveVoice.speak(speech, voice);
         });
 
